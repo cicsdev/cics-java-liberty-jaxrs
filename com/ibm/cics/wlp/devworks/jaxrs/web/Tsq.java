@@ -6,10 +6,12 @@
 /*                                                                        */
 /* US Government Users Restricted Rights - Use, duplication or disclosure */
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
-/*                                                                        */      
+/*                                                                        */     
+
 package com.ibm.cics.wlp.devworks.jaxrs.web;
 
 import java.util.ArrayList;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
@@ -32,10 +34,11 @@ public class Tsq {
 	 * @return The TSQ record requested in the URI as a JSONObject i.e
 	 *         {"records"
 	 *         :[{"record":"RECORD1"},{"record":"RECORD2"}],"tsqName":"TSQ"}
+	 * @throws Exception 
 	 */
 	@javax.ws.rs.GET
 	@Produces("application/json")
-	public JSONObject browseTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) {
+	public JSONObject browseTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) throws Exception {
 		// create the object that will interact with the TSQ
 		BrowseTsqOSGi browseTsq = new BrowseTsqOSGi();
 
@@ -70,11 +73,12 @@ public class Tsq {
 	 * 
 	 * @return The result of writing to an existing TSQ in a JSON Object i.e
 	 *         {result:"success or failure",tsqName:"TSQ"}
+	 * @throws Exception 
 	 */
 	@javax.ws.rs.PUT
 	@Consumes("application/json")
 	@Produces("application/json")
-	public JSONObject updateTsq(JSONObject jsonTsq) {
+	public JSONObject updateTsq(JSONObject jsonTsq) throws Exception {
 		// string to hold the result of writing to the tsq
 		String result = "";
 
@@ -125,11 +129,12 @@ public class Tsq {
 	 * 
 	 * @return The result of creating a new TSQ and the name of the new queue as
 	 *         a JSONObject i.e {result:"result from create",tsqName:"TSQ"}
+	 * @throws Exception 
 	 */
 	@javax.ws.rs.POST
 	@Consumes("application/json")
 	@Produces("application/json")
-	public JSONObject createTsq(JSONObject jsonTsq) {
+	public JSONObject createTsq(JSONObject jsonTsq) throws Exception {
 		// a string to store the result
 		String result = "";
 
@@ -180,10 +185,11 @@ public class Tsq {
 	 *
 	 * @return The result of the DELETE as a JSONObject i.e
 	 *         {result:"result of delete",tsqName:"TSQ"}
+	 * @throws Exception 
 	 */
 	@javax.ws.rs.DELETE
 	@Produces("application/json")
-	public JSONObject deleteTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) {
+	public JSONObject deleteTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) throws Exception {
 		
 		String result = "";
 
@@ -191,7 +197,7 @@ public class Tsq {
 		DeleteTsqOSGi deleteTsq = new DeleteTsqOSGi();
 
 		// delete the TSQ and store the result
-			result = deleteTsq.deleteTSQ(tsqName);
+		result = deleteTsq.deleteTSQ(tsqName);
 
 		// create the result JSONObject
 		JSONObject jsonResult = new JSONObject();

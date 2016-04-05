@@ -21,7 +21,7 @@ public class TsqConfig extends javax.ws.rs.core.Application
 	{
 		Set<Class<?>> classes = new HashSet<Class<?>>();
 		
-		classes.add(com.ibm.cics.wlp.devworks.jaxrs.tsq.Tsq.class);
+		classes.add(com.ibm.cics.wlp.devworks.jaxrs.web.Tsq.class);
 		
 		return classes;
 	}
