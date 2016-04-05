@@ -8,7 +8,7 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */    
 
-package com.ibm.cics.wlp.devworks.jaxrs.tsq;
+package com.ibm.cics.wlp.devworks.jaxrs.web;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -7,7 +7,7 @@
 /* US Government Users Restricted Rights - Use, duplication or disclosure */
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */      
-package com.ibm.cics.wlp.devworks.jaxrs.tsq;
+package com.ibm.cics.wlp.devworks.jaxrs.web;
 
 import java.util.ArrayList;
 import javax.ws.rs.Consumes;
