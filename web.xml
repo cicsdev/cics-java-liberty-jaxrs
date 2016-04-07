@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <copyright                                                  -->
+<!-- 	Licensed Materials - Property of IBM                     -->
+<!-- 	SAMPLE                                                   -->
+<!-- 	(C) Copyright IBM Corp. 2016 All Rights Reserved.        -->
+<!-- 	US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
+<!-- </copyright> -->
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>com.ibm.cics.wlp.devworks.jaxrs.web</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>IBM JAX-RS service</description>
+		<display-name>IBM JAX-RS service</display-name>
+		<servlet-name>IBMJAXRS</servlet-name>
+		<servlet-class>com.ibm.websphere.jaxrs.server.IBMRestServlet</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.ibm.cics.wlp.devworks.jaxrs.web.TsqConfig</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IBMJAXRS</servlet-name>
+		<url-pattern>/jaxrs/*</url-pattern>
+	</servlet-mapping>
+</web-app>
