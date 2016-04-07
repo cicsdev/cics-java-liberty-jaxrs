@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
+import com.ibm.cics.server.CicsConditionException;
 import com.ibm.cics.server.examples.wlp.tsq.BrowseTsqOSGi;
 import com.ibm.cics.server.examples.wlp.tsq.DeleteTsqOSGi;
 import com.ibm.cics.server.examples.wlp.tsq.TsqInfoOSGi;
@@ -40,11 +41,20 @@ public class Tsq {
 	@Produces("application/json")
 	public JSONObject browseTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) throws Exception {
 		// create the object that will interact with the TSQ
-		BrowseTsqOSGi browseTsq = new BrowseTsqOSGi();
+		BrowseTsqOSGi browseTsq;
+		browseTsq = new BrowseTsqOSGi();
 
 		// create an ArrayList, insert the TSQ records
 		ArrayList<String> records = new ArrayList<String>();		
-		records = browseTsq.browseTSQ(tsqName);
+		try {
+			records = browseTsq.browseTSQ(tsqName);
+		} catch (Exception e) {
+			if (e instanceof com.ibm.cics.server.InvalidQueueIdException){
+				// Carry on if the queue is empty	
+		} else {
+			throw e;
+			}
+		}
 		
 		// Put each record into a JSONObject and add it to a JSONArray
 		JSONArray queueArray = new JSONArray();
