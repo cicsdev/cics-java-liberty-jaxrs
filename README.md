@@ -6,8 +6,8 @@ RESTful service for CICS TSQ browsing using Liberty and JAX-RS
 The following Java source components are supplied in the src directory in this repository.
 
 ## Java package com.ibm.cics.wlp.devworks.jaxrs.web
-Tsq - RESTful TSQ browser
-TsqConfig - IBMRestServlet configuration class
+* Tsq - RESTful TSQ browser 
+* TsqConfig - IBMRestServlet configuration class 
 
 ## Pre-reqs
 
