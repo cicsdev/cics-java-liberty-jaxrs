@@ -132,7 +132,7 @@ a new class in the project src folder and name it Tsq. Within this class
 add the following import statements for the business logic classes we
 copied into our project in step 3.
 
-``` Java
+```java
 import com.ibm.cics.server.examples.wlp.tsq.BrowseTsqOSGi;
 import com.ibm.cics.server.examples.wlp.tsq.DeleteTsqOSGi;
 import com.ibm.cics.server.examples.wlp.tsq.TsqInfoOSGi;
@@ -142,7 +142,7 @@ import com.ibm.cics.server.examples.wlp.tsq.WriteTsqOSGi;
 5. Above the class declaration add the \@Path annotation to define the
 URI path to this class.
 
-```Java
+```java
 @javax.ws.rs.Path("/tsq/{tsqName}")
 public class Tsq {
 ....
@@ -163,8 +163,7 @@ which is annotated with the `@GET `annotation. This return a
 **JSONObject** which is an unordered Map of name/value pairs, which
 makes returning JSON data to the client very simple.
 
-```javax
-
+```java
     @javax.ws.rs.GET
     @Produces("application/json")
     public JSONObject browseTsq(@javax.ws.rs.PathParam("tsqName") String tsqName) throws Exception {
