@@ -22,7 +22,7 @@ The sample  code can be added to a dynamic web project and deployed into a CICS 
 
 ## Reference
 
-More information about this sample can be found at the following tutorial on the CICS [developer center](https://developer.ibm.com/cics/2016/03/11/java-for-cics-developing-restful-web-services-in-liberty-with-jax-rs)
+More information about this sample can be found at the accompanying tutorial [Developing RESTful web services in Liberty with JAX-RS](blog.md)
 
 
 
