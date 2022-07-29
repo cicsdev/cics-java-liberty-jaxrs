@@ -12,8 +12,7 @@ The following Java source components are supplied in the src directory in this r
 ## Pre-reqs
 
 * CICS TS V5.1 or later
-* Java SE 1.7 or later on the z/OS system
-* Java SE 1.7 or later on the workstation
+* Java SE 1.8 or later on the workstation
 * Eclipse with WebSphere Developer Tools and CICS Explorer SDK installed
 
 ## Configuration
